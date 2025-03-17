@@ -5,6 +5,7 @@ body {
     padding: 0;
     background-color: #000;
     color: #fff;
+    
   }
   
   header {
@@ -241,4 +242,123 @@ header::before {
   
   /* Add more delays as needed */
 
-  
+      /* Image Gallery Popup */
+      .popup-container {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .popup-content {
+        position: relative;
+        width: 80%;
+        max-width: 1000px;
+        background-color: white;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      
+      .gallery-container {
+        position: relative;
+        width: 100%;
+        height: 500px;
+      }
+      
+      .gallery-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      
+      .gallery-image.active {
+        opacity: 1;
+      }
+      
+      .gallery-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 50px;
+        height: 50px;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        font-size: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        border-radius: 50%;
+        user-select: none;
+      }
+      
+      .gallery-prev {
+        left: 20px;
+      }
+      
+      .gallery-next {
+        right: 20px;
+      }
+      
+      .gallery-close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 30px;
+        height: 30px;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        border-radius: 50%;
+        z-index: 1001;
+      }
+      
+      .gallery-counter {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        padding: 5px 10px;
+        border-radius: 15px;
+        font-size: 14px;
+      }
+      
+      /* Image dots navigation */
+      .gallery-dots {
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+      }
+      
+      .gallery-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+      }
+      
+      .gallery-dot.active {
+        background-color: white;
+      }
